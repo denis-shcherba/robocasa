@@ -119,7 +119,7 @@ MUJOCO_LOG.TXT
 macros_private.py
 robocasa/models/assets/demonstrations_private
 datasets
-
+kitchen_dataset
 # model zoo
 v-hacd
 robocasa/models/assets/model_zoo_assets

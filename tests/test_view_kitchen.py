@@ -1,9 +1,9 @@
-#!/usr/bin/env python3
 import mujoco
 import mujoco.viewer
 import numpy as np
 import time
 import os
+import random
 
 def view_mujoco_xml(xml_path):
     """
@@ -32,5 +32,11 @@ def view_mujoco_xml(xml_path):
         print(f"Error loading or visualizing the model: {e}")
 
 if __name__ == "__main__":
-    xml_path = "../kitchen_dataset/INDUSTRIAL_ONE_WALL_SMALL.xml"
-    view_mujoco_xml(xml_path)
+    folder_path = "kitchen_dataset"
+    if not os.path.exists(folder_path) or not os.listdir(folder_path):
+        print(f"Error: No XML files found in {folder_path}")
+    else:
+        xml_files = [f for f in os.listdir(folder_path) if f.endswith(".xml")]
+        random_xml = random.choice(xml_files)
+        xml_path = os.path.join(folder_path, random_xml)
+        view_mujoco_xml(xml_path)

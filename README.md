@@ -47,6 +47,17 @@ RoboCasa works across all major computing platforms. The easiest way to set up i
    ```
 
 -------
+## Save and view all possible kitchen scenes 
+Generate all 120 kitchen scenes and save them in kitchen_dataset/
+```
+python -m robocasa.scripts.generate_kitchen_scenes
+```
+
+You can test loading a randomly selected kitchen in MuJoCo using
+```
+python tests/test_view_kitchen.py
+```
+
 ## Quick start
 **(Mac users: for these scripts, prepend the "python" command with "mj": `mjpython ...`)**
 
